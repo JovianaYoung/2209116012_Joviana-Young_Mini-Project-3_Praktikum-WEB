@@ -21,8 +21,8 @@
         $catatan = $_POST['catatan'];
         // Menampilkan informasi pembayaran
         displayPaymentInfo($nama, $phone, $alamat, $email, $catatan);
-        // Tampilkan alert menggunakan JavaScript
-        echo "<script>alert('Pesanan sedang diproses. Silahkan melakukan pembayaran ke rekening BNI no rek 2356543.');</script>";
+        // Menampilkan alert menggunakan JavaScript
+        echo "<script>alert('Pesanan Berhasil diproses. Silahkan lakukan Pembayaran Pada Bank BNI No. Rek 254738.');</script>";
     }
 ?>
 
@@ -50,18 +50,17 @@
                     <label for="catatan">Catatan:</label>
                     <textarea class="form-control" id="catatan" name="catatan"></textarea>
                 </div>
-                <button type="submit" name="submit" class="btn btn-primary">Kirim</button> <!-- Ganti nama tombol menjadi "submit" -->
+                <button type="submit" name="submit" class="btn btn-primary" onclick="showAlert()">Kirim</button> <!-- Ganti nama tombol menjadi "submit" -->
             </form>
         </div>
     </div>
 </div>
-
 
 <?php
     include("includes/footer.php");
 ?>
 <script>
     function showAlert() {
-        alert('Pesanan Sedang Diproses. Silahkan melakukan Pembayaran ke Rekening BNI No.Rekening 2356543.');
+        alert('Pesanan Berhasil diproses. Silahkan lakukan Pembayaran Pada Bank BNI No. Rek 254738.');
     }
 </script>
