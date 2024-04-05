@@ -92,8 +92,8 @@ INSERT INTO `products` (`product_id`, `p_category_id`, `p_material_id`, `product
 (34, 3, 5, 'Sofa Kulit', 'Tinggikan rumah Anda dengan bagian tengah yang mewujudkan kecanggihan dan kenyamanan.', 260.00, 0, 'sofakulit3a.JPG', 'sofakulit3aa.JPG', 'sofakulit3aaa.JPG'),
 (35, 1, 3, 'Meja Logam', 'Tinggikan rumah Anda dengan dekorasi yang memadukan fungsionalitas dan daya tarik estetika.', 95.00, 0, 'mejalogam3a.WEBP', 'mejalogam3aa.WEBP', 'mejalogam3aaa.WEBP'),
 (39, 4, 5, 'Tempat Tidur Kulit', 'Rasakan kenyamanan tak tertandingi dan malam yang tenang dengan koleksi tempat tidur kami yang luar biasa.', 300.00, 0, 'kasurkulit2a.WEBP', 'kasurkulit2aa.WEBP', 'kasurkulit2aaa.WEBP'),
-(40, 1, 3, 'Meja Logam', 'Elevate your home with a statement piece that combines functionality and aesthetic appeal.', 130.00, 0, 'mejalogam2a.WEBP', 'mejalogam2aa.WEBP', 'mejalogam2aaa.WEBP'),
-(53, 7, 3, 'Metal Leg Chair', 'Meticulously crafted with attention to detail, our chairs offer a seamless blend of functionality and elegance.', 65.00, 25, 'chair5a-metal.jpg', 'chair5b-metal.jpg', 'chair5c-metal.jpg');
+(40, 1, 3, 'Meja Logam', 'Tinggikan rumah Anda dengan dekorasi yang memadukan fungsionalitas dan daya tarik estetika.', 130.00, 0, 'jovimeja1.WEBP', 'jovimeja2.WEBP', 'jovimeja3.WEBP'),
+(53, 7, 3, 'Kursi Logam', 'Dibuat dengan cermat dengan memperhatikan detail, kursi kami menawarkan perpaduan sempurna antara fungsionalitas dan keanggunan.', 65.00, 25, 'chair5a-metal.jpg', 'chair5b-metal.jpg', 'chair5c-metal.jpg');
 
 -- --------------------------------------------------------
 
