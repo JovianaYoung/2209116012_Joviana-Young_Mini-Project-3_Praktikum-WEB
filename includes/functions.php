@@ -1,6 +1,6 @@
 <?php
 
-$db = mysqli_connect("localhost", "root", "", "miniproweb3");
+$db = mysqli_connect("localhost", "root", "", "joviweb3");
 
 function getRealIpUser(){
     switch(true){
