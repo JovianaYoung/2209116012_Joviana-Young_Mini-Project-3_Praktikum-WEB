@@ -35,28 +35,28 @@
 <div id="content">
     <div class="container">
         <div class="col-md-12">
-            <form action="cart.php" method="post" style="margin-top: 30px;" onsubmit="return validateForm()"> <!-- Tambahkan onsubmit event handler -->
+            <form action="cart.php" method="post" style="margin-top: 30px;" onsubmit="return validateForm()">
                 <div class="form-group">
                     <label for="nama">Nama:</label>
-                    <input type="text" class="form-control" id="nama" name="nama" required> <!-- Tambahkan atribut required -->
+                    <input type="text" class="form-control" id="nama" name="nama" required> 
                 </div>
                 <div class="form-group">
                     <label for="phone">Nomor HP:</label>
-                    <input type="text" class="form-control" id="phone" name="phone" required> <!-- Tambahkan atribut required -->
+                    <input type="text" class="form-control" id="phone" name="phone" required> 
                 </div>
                 <div class="form-group">
                     <label for="alamat">Alamat:</label>
-                    <textarea class="form-control" id="alamat" name="alamat" required></textarea> <!-- Tambahkan atribut required -->
+                    <textarea class="form-control" id="alamat" name="alamat" required></textarea> 
                 </div>
                 <div class="form-group">
                     <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="email" name="email" required> <!-- Tambahkan atribut required -->
+                    <input type="email" class="form-control" id="email" name="email" required> 
                 </div>
                 <div class="form-group">
                     <label for="catatan">Catatan:</label>
                     <textarea class="form-control" id="catatan" name="catatan"></textarea>
                 </div>
-                <button type="submit" name="submit" class="btn btn-primary">Kirim</button> <!-- Ganti nama tombol menjadi "submit" -->
+                <button type="submit" name="submit" class="btn btn-primary">Kirim</button> 
             </form>
         </div>
     </div>
