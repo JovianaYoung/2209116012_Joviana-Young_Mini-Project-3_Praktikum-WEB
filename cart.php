@@ -2,6 +2,12 @@
     $active = 'Cart';
     include("includes/header.php");
 
+    // Cek apakah pengguna sudah login
+    if (!isset($_SESSION['user'])) {
+        // Jika belum, redirect ke halaman login
+        header("Location: login.php");
+        exit; // Pastikan tidak ada kode yang dieksekusi setelah redirect
+    }
 ?>  
 
 <div id="content">
