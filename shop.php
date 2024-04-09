@@ -3,139 +3,103 @@
     include("includes/header.php");
 ?>
 
-    <div id="content">
-        <div class="container">
-            <div class="col-md-12">
-                <ul class="breadcrumb">
-                    <li><a href="index.php">Home</a></li>
-                    <li>
-                        Belanja
-                    </li>
-                </ul>
-            </div>
+<div id="content">
+    <div class="container">
+        <div class="col-md-12">
+            <ul class="breadcrumb">
+                <li><a href="index.php">Home</a></li>
+                <li>Belanja</li>
+            </ul>
+        </div>
 
-            <div class="col-md-3">
+        <div class="col-md-3">
+            <?php include("includes/sidebar.php"); ?>
+        </div>
+
+        <div class="col-md-9">
+            <div class="row">
                 <?php
-                    include("includes/sidebar.php");
-                ?>
-            </div>
+                if(isset($_SESSION['user'])) {
+                    // Jika pengguna sudah login, tampilkan konten belanja
+                    if(!isset($_GET['p_categories']) && !isset($_GET['p_material'])) {
+                        $per_page = 6;
+                        if(isset($_GET['page'])) {
+                            $page = $_GET['page'];
+                        } else {
+                            $page = 1;
+                        }
+                        $start_from = ($page - 1) * $per_page;
 
-                <div class="col-md-9">
+                        $get_products = "SELECT *
+                            FROM products
+                            JOIN product_categories ON products.p_category_id = product_categories.p_category_id
+                            WHERE product_categories.p_category_title != 'SALE'
+                            ORDER BY 1 DESC LIMIT $start_from, $per_page";
+                        $run_products = mysqli_query($con, $get_products);
+                        while($row_products = mysqli_fetch_array($run_products)) {
+                            $pro_id = $row_products['product_id'];
+                            $pro_title = $row_products['product_title'];
+                            $pro_price = $row_products['product_price'];
+                            $pro_image1 = $row_products['product_image1'];
+                            $p_category_title = $row_products['p_category_title'];
 
-                    <div class="row">
-                        <?php
-                            if(!isset($_GET['p_categories'])){
-                                if(!isset($_GET['p_material'])){
-                                    $per_page = 6;
-                                    if(isset($_GET['page'])){
-                                        $page = $_GET['page'];
-                                    }else{
-                                        $page=1;
-                                    }
-                                    $start_from = ($page-1) * $per_page;
-
-                                    $get_products = "SELECT *
-                                    FROM products
-                                    JOIN product_categories ON products.p_category_id = product_categories.p_category_id
-                                    WHERE product_categories.p_category_title != 'SALE'
-                                    ORDER BY 1 DESC LIMIT $start_from, $per_page";
-                                    $run_products = mysqli_query($con, $get_products);
-                                    while($row_products = mysqli_fetch_array($run_products)){
-                                        $pro_id = $row_products['product_id'];
-                                        $pro_title = $row_products['product_title'];
-                                        $pro_price = $row_products['product_price'];
-                                        $pro_image1 = $row_products['product_image1'];
-                                        $p_category_title = $row_products['p_category_title'];
-                                        
-                                        
-
-                                        echo "
-                                            <div class = 'col-md-4 col-sm-6 center-responsive'>
-                                                <div class = 'product'>
-                                                    <a href = 'details.php?pro_id=$pro_id'> 
-                                                        <img class='img-responsive'src = 'product_images/$pro_image1'>
-                                                    </a>
-
-                                                    <div class='text'>
-                                                        <h3>
-                                                            <a href = 'details.php?pro_id=$pro_id'> 
-                                                                $pro_title
-                                                            </a>
-                                                        </h3>
-                                                        <p class='price'>
-                                                            $$pro_price
-                                                        </p>
-
-                                                        <p class ='buttons'> 
-                                                            <a class='btn btn-default' href = 'details.php?pro_id=$pro_id'> 
-                                                                Lihat Detail
-                                                            </a>
-
-                                                            <a class='btn btn-primary add-to-cart-btn' href='details.php?pro_id=<?php echo $pro_id; ?>'>
-                                                                <i class='fa fa-shopping-cart'></i> Tambah
-                                                            </a>
-
-                                                        </p>
-                                                    </div>
-                                                    
-                                                </div>
-                                            </div>
-                                        ";
-                                        
-                                }
-
+                            echo "
+                                <div class='col-md-4 col-sm-6 center-responsive'>
+                                    <div class='product'>
+                                        <a href='details.php?pro_id=$pro_id'> 
+                                            <img class='img-responsive' src='product_images/$pro_image1'>
+                                        </a>
+                                        <div class='text'>
+                                            <h3><a href='details.php?pro_id=$pro_id'>$pro_title</a></h3>
+                                            <p class='price'>$$pro_price</p>
+                                            <p class='buttons'> 
+                                                <a class='btn btn-default' href='details.php?pro_id=$pro_id'>Lihat Detail</a>
+                                                <a class='btn btn-primary add-to-cart-btn' href='details.php?pro_id=$pro_id'>
+                                                    <i class='fa fa-shopping-cart'></i> Tambah
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>";
+                        }
                         ?>
                     </div>
                     <center>
                         <ul class="pagination">
                             <?php
-                                $query = "SELECT *
+                            $query = "SELECT *
                                 FROM products
                                 JOIN product_categories ON products.p_category_id = product_categories.p_category_id
                                 WHERE product_categories.p_category_title != 'SALE'";
-                                $result = mysqli_query($con, $query);
-                                $total_records = mysqli_num_rows($result);
-                                $total_pages = ceil($total_records / $per_page);
+                            $result = mysqli_query($con, $query);
+                            $total_records = mysqli_num_rows($result);
+                            $total_pages = ceil($total_records / $per_page);
 
-                                echo "
-                                <li>
-                                    <a href='shop.php?page=1'> ".'First Page'."</a>
-                                </li>
+                            echo "<li><a href='shop.php?page=1'>First Page</a></li>";
 
-                                ";
-
-                                for($i=1; $i<=$total_pages; $i++){
-                                    echo "
-                                    <li>
-                                        <a href='shop.php?page=".$i."'> ".$i."</a>
-                                    </li>
-                                    ";
-                                };
-
-                                echo "
-                                <li>
-                                    <a href='shop.php?page=$total_pages'> ".'Last Page'."</a>
-                                </li>
-
-                                ";
-
-                                }
+                            for($i = 1; $i <= $total_pages; $i++) {
+                                echo "<li><a href='shop.php?page=$i'>$i</a></li>";
                             }
-                            ?>
+
+                            echo "<li><a href='shop.php?page=$total_pages'>Last Page</a></li>";
+                        } 
+                        ?>
                         </ul>
                     </center>
-                    
-                        <?php 
-                        
-                        getpcatpro();
-                        getmatpro();
-
-                        ?>
-
-                </div>
+                    <?php 
+                    getpcatpro();
+                    getmatpro();
+                } else {
+                    // Jika pengguna belum login, beri tahu mereka untuk login terlebih dahulu
+                    echo "<p>Silakan <a href='login.php'>login</a> untuk melihat halaman belanja.</p>";
+                }
+                ?>
+            </div>
         </div>
     </div>
-    <?php
-            include("includes/footer.php");
-        ?>
+</div>
+
+<?php
+include("includes/footer.php");
+?>
 </body>
