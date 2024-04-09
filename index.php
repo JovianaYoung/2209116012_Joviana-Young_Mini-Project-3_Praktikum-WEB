@@ -1,7 +1,6 @@
 <?php
     $active = 'Home';
     include("includes/header.php");
-    include("includes/database.php");
 ?>
     <main>
         <div class="bg-image d-flex justify-content-center align-items-flex-start banner"
@@ -53,31 +52,6 @@
 
             </div>
         </div>
-
-
-        <div id="sale">
-        <div class="sale-box col-md-12">
-            <div class="holder">
-                <h2>
-                    Promo Produk
-                </h2>
-            </div>
-        </div>
-    </div>
-
-    <div id="content" class="holder">
-        <div class="row">
-            <?php
-            // Panggil fungsi untuk mendapatkan produk yang sedang diskon
-            if (isset($_SESSION['user'])) {
-                getSalePro($_SESSION['user']); // Sertakan argumen $_SESSION['user'] di sini
-            } else {
-                // Tampilkan produk dengan tautan ke halaman login
-                echo "<p>Silahkan <a href='login.php'>login</a> untuk Melihat Promo Produk!</p>";
-            }
-            ?>
-        </div>
-    </div>
 
     <div id="latest">
         <div class="latest-box col-md-12">
