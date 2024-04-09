@@ -1,6 +1,7 @@
 <?php
     $active = 'Home';
     include("includes/header.php");
+    include("includes/database.php");
 ?>
     <main>
         <div class="bg-image d-flex justify-content-center align-items-flex-start banner"
