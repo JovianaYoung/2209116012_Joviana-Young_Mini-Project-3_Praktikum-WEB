@@ -1,6 +1,7 @@
 <?php
     $active = 'Shop';
     include("includes/header.php");
+    include("includes/database.php");
 ?>
 
 <div id="content">
