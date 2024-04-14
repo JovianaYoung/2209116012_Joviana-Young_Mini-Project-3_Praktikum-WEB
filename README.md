@@ -18,8 +18,14 @@
     
     ![image](https://github.com/JovianaYoung/2209116012_Joviana-Young_Mini-Project-3_Praktikum-WEB/assets/124419335/df76e598-8270-45e2-9114-5079028ce167)
 
-- Atau cara lain untuk mengaksesnya adalah dengan mencoba mengakses di search engine lainnya selain chorme dan pastikan bahwa protokolnya "http".
+  - Maka tampilan website seperti gambar dibawah ini akan muncul jika sudah mengikuti langkah diatas:
+    
+    ![image](https://github.com/JovianaYoung/2209116012_Joviana-Young_Mini-Project-3_Praktikum-WEB/assets/124419335/55d4c5b2-c04f-4b09-a8f8-3bf3e3120609)
 
+- Atau cara lain untuk mengaksesnya adalah dengan mencoba mengakses di search engine lainnya dan pastikan bahwa protokolnya "http".
+  
+- Contoh search engine:
+   ![image](https://github.com/JovianaYoung/2209116012_Joviana-Young_Mini-Project-3_Praktikum-WEB/assets/124419335/f4bd6d59-4cc7-4e6c-ad8a-5fe74cbd3f2f)
 
 
 # Akun Login User
