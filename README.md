@@ -1,5 +1,5 @@
 # Link Website
-[furniture-toko.wuaze.com](http://furniture-toko.wuaze.com/) (pastikan protokolnya http)
+[furniture-toko.wuaze.com](http://furniture-toko.wuaze.com/) (Pastikan protokolnya "http")
 
 
 ## Jika terdapat masalah pada saat mengakses link yang seperti di bawah ini:
@@ -18,7 +18,7 @@
     
     ![image](https://github.com/JovianaYoung/2209116012_Joviana-Young_Mini-Project-3_Praktikum-WEB/assets/124419335/df76e598-8270-45e2-9114-5079028ce167)
 
-
+- Atau cara lain untuk mengaksesnya adalah dengan mencoba mengakses di search engine lainnya selain chorme dan pastikan bahwa protokolnya "http".
 
 
 
