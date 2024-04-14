@@ -5,7 +5,7 @@
 ## Jika terdapat masalah pada saat mengakses link yang seperti di bawah ini:
 ![image](https://github.com/JovianaYoung/2209116012_Joviana-Young_Mini-Project-3_Praktikum-WEB/assets/124419335/4cc661b0-cce0-4ee3-bdfe-5267f0613121)
 
-###Langkah yang bisa diambil untuk mengaksesnya dengan cara berikut:
+### Langkah yang bisa diambil untuk mengaksesnya dengan cara berikut:
 - klik "Details"
   
   ![image](https://github.com/JovianaYoung/2209116012_Joviana-Young_Mini-Project-3_Praktikum-WEB/assets/124419335/a7bf7e30-da75-4712-a415-b547da6e6ada)
